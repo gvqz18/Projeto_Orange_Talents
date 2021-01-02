@@ -36,15 +36,10 @@ import br.com.orangetalents.api.repository.ClienteRepository;
 public class ControllerCliente {
 	
 	@GetMapping(value="/", produces = "application/json")
-	public ResponseEntity<ContaCliente> init(){
+	public ResponseEntity<String> heatlh_check(){
 		
-		ContaCliente nome = new ContaCliente();
-		nome.setNome("Guilherme");
-		nome.setEmail("Gui123@gmail.com");
-		nome.setCpf("123456");
-		nome.setDataNascimento("18/04/2000");
-		
-		return new ResponseEntity(nome, HttpStatus.OK);
+		return new ResponseEntity<>("health check!", HttpStatus.OK);
+	
 	}
 
 	@Autowired
